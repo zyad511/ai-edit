@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HJI | استوديو الفيديو بالذكاء الاصطناعي</title>
+    
+    <!-- الخطوط والتنسيقات الأساسية -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ========== الخلفية المتحركة الفخمة ========== -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="gradient-orb orb-4"></div>
+    </div>
+
+    <!-- ========== الشريط العلوي مع الحقوق الشفافة ========== -->
+    <div class="top-bar">
+        <div class="watermark-container">
+            <div class="watermark-logo">
+                <i class="fas fa-crown"></i>
+            </div>
+            <div class="watermark-text">
+                <span class="watermark-ai">AI</span>
+                <span class="watermark-hji">HJI</span>
+            </div>
+            <div class="watermark-glow"></div>
+        </div>
+        
+        <div class="top-bar-actions">
+            <button class="action-btn" id="helpBtn">
+                <i class="fas fa-question-circle"></i>
+                <span>مساعدة</span>
+            </button>
+            <button class="action-btn" id="aboutBtn">
+                <i class="fas fa-info-circle"></i>
+                <span>عن الموقع</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========== المحتوى الرئيسي ========== -->
+    <div class="main-container">
+        <!-- الشعار الرئيسي -->
+        <div class="main-logo">
+            <div class="main-logo-icon">
+                <i class="fas fa-film"></i>
+            </div>
+            <h1 class="main-logo-text">
+                <span class="text-ai">AI</span>
+                <span class="text-hji">HJI</span>
+                <span class="text-studio">استوديو</span>
+            </h1>
+            <p class="main-tagline">اصنع فيديوهات احترافية بذكاء اصطناعي فائق</p>
+        </div>
+
+        <!-- ========== منطقة رفع الملفات ========== -->
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon-container">
+                    <i class="fas fa-cloud-upload-alt upload-main-icon"></i>
+                    <i class="fas fa-video upload-video-icon"></i>
+                    <i class="fas fa-image upload-image-icon"></i>
+                </div>
+                <h3 class="upload-title">اسحب الصور أو الفيديو هنا</h3>
+                <p class="upload-subtitle">أو اضغط لاختيار الملفات</p>
+                <input type="file" id="fileInput" multiple accept="image/*,video/*" hidden>
+                <button class="upload-button" onclick="document.getElementById('fileInput').click()">
+                    <i class="fas fa-plus-circle"></i>
+                    اختر ملفات
+                </button>
+                <div class="files-preview" id="filesPreview"></div>
+            </div>
+        </div>
+
+        <!-- ========== منطقة الدردشة مع الذكاء الاصطناعي ========== -->
+        <div class="chat-section">
+            <div class="chat-header">
+                <div class="chat-header-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="chat-header-text">
+                    <h3>المصمم الذكي</h3>
+                    <span class="chat-status">متصل <i class="fas fa-circle"></i></span>
+                </div>
+                <div class="ai-badge">
+                    <i class="fas fa-microchip"></i>
+                    <span>AI HJI</span>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message ai-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-sender">المصمم AI HJI</div>
+                        <div class="message-text">
+                            مرحباً! أنا مصممك الذكي. صف لي التصميم اللي تبيه بدقة، مثلاً:<br>
+                            • "أبي فيديو أغنية مع تأثيرات نارية و كلمات تظهر"<br>
+                            • "تصميم إعلان فخم لمنتج عطور"<br>
+                            • "مونتاج صور مع موسيقى هادئة"
+                        </div>
+                        <div class="message-time">الآن</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <textarea class="chat-input" id="userInput" placeholder="اكتب وصف التصميم هنا..." rows="1"></textarea>
+                <button class="send-button" id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+
+            <!-- الأمثلة السريعة -->
+            <div class="examples-container">
+                <div class="examples-title">
+                    <i class="fas fa-magic"></i>
+                    <span>أمثلة سريعة</span>
+                </div>
+                <div class="examples-grid">
+                    <div class="example-chip" data-example="أغنية رومانسية مع قلوب متحركة">
+                        <i class="fas fa-heart"></i>
+                        <span>أغنية رومانسية</span>
+                    </div>
+                    <div class="example-chip" data-example="إعلان فخم لسيارة مع تأثيرات لامعة">
+                        <i class="fas fa-car"></i>
+                        <span>إعلان سيارة</span>
+                    </div>
+                    <div class="example-chip" data-example="فيديو كلمات أغنية مع موسيقى">
+                        <i class="fas fa-music"></i>
+                        <span>فيديو كلمات</span>
+                    </div>
+                    <div class="example-chip" data-example="مونتاج صور عائلية مع تأثيرات دافئة">
+                        <i class="fas fa-images"></i>
+                        <span>مونتاج صور</span>
+                    </div>
+                    <div class="example-chip" data-example="تأثيرات سينمائية وإضاءة درامية">
+                        <i class="fas fa-film"></i>
+                        <span>تأثيرات سينمائية</span>
+                    </div>
+                    <div class="example-chip" data-example="فيديو كرتوني مع رسوم متحركة">
+                        <i class="fas fa-dragon"></i>
+                        <span>كرتون</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== منطقة المعاينة والتحميل ========== -->
+        <div class="preview-section" id="previewSection">
+            <div class="preview-header">
+                <h3><i class="fas fa-eye"></i> معاينة التصميم النهائي</h3>
+                <span class="preview-badge">AI HJI</span>
+            </div>
+            
+            <div class="video-preview" id="videoPreview">
+                <div class="preview-placeholder">
+                    <i class="fas fa-video"></i>
+                    <p>المعاينة ستظهر هنا بعد التصميم</p>
+                </div>
+            </div>
+            
+            <div class="download-container">
+                <div class="download-title">
+                    <i class="fas fa-download"></i>
+                    <span>اختر جودة التحميل</span>
+                </div>
+                <div class="download-buttons">
+                    <button class="download-button hd-button" onclick="downloadVideo('HD')">
+                        <i class="fas fa-hd"></i>
+                        <div class="button-text">
+                            <span class="quality-name">HD</span>
+                            <span class="quality-desc">1080p - جودة عالية</span>
+                        </div>
+                    </button>
+                    <button class="download-button k4-button" onclick="downloadVideo('4K')">
+                        <i class="fas fa-crown"></i>
+                        <div class="button-text">
+                            <span class="quality-name">4K فخم</span>
+                            <span class="quality-desc">2160p - جودة سينمائية</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== الفوتر مع الحقوق ========== -->
+        <div class="footer">
+            <div class="footer-logo">
+                <i class="fas fa-copyright"></i>
+                <span>2025 AI HJI - جميع الحقوق محفوظة</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">الخصوصية</a>
+                <a href="#">الشروط</a>
+                <a href="#">اتصل بنا</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== السكريبتات ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="watermark.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
